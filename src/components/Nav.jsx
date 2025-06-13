@@ -8,7 +8,7 @@ const Nav = ({ userName }) => {
   const submit = useSubmit();
 
   const handleDelete = () => {
-    submit(null, { method: "post", action: "/logout" });
+    submit(null, { method: "post", action: "/HomeBudget/logout" });
     setShowModal(false);
   };
 
