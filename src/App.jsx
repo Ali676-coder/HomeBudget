@@ -77,7 +77,10 @@ const router = createBrowserRouter(
       />
       <Route path="logout" action={logoutAction} />
     </Route>
-  )
+  ),
+  {
+    basename: "/HomeBudget",
+  }
 );
 
 function App() {

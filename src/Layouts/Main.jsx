@@ -4,11 +4,9 @@ import { fetchData } from "../helper";
 // RRD Import
 import { Outlet, useLoaderData } from "react-router-dom";
 
-// assets Import
-import wave from "../assets/wave_modified.svg";
-
 // components Import
 import Nav from "../components/nav";
+import Footer from "../components/Footer";
 
 const Main = () => {
   const { userName } = useLoaderData();
@@ -18,8 +16,7 @@ const Main = () => {
       <main>
         <Outlet />
       </main>
-      {/* <img src={wave} alt="Logo" /> */}
-      <div className="fotter">Footer</div>
+      <Footer />
     </div>
   );
 };
