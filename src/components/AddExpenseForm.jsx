@@ -96,7 +96,18 @@ const AddExpenseForm = ({ budgets }) => {
               placeholder="e.g. 2"
               required
               value={quantity}
-              onChange={(e) => setQuantity(+e.target.value)}
+              onChange={(e) => {
+                const val = e.target.value;
+                setQuantity(val);
+              }}
+              onBlur={(e) => {
+                const val = +e.target.value;
+                if (isNaN(val) || val < 1) {
+                  setQuantity(1);
+                } else {
+                  setQuantity(val);
+                }
+              }}
             />
           </div>
           <div className="grid-xs">
