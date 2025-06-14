@@ -91,8 +91,18 @@ export const dashBoardAction = async ({ request }) => {
   // new user submission
   if (_action === "newUser") {
     try {
-      localStorage.setItem("userName", JSON.stringify(values.userName));
-      return toast.success(`Welcome ${values.userName}`);
+      const rawName = values.userName;
+
+      // name cleaning
+      const cleanedName = rawName
+        .split(/\s+/)
+        .map((word) => word.replace(/[^a-zA-Z\u0600-\u06FF]/g, ""))
+        .find((word) => word.length > 0);
+      if (!cleanedName) {
+        toast.error("Invalid name");
+      }
+      localStorage.setItem("userName", JSON.stringify(cleanedName));
+      return toast.success(`Welcome ${cleanedName}`);
     } catch (error) {
       throw Error(`There was a problem creating your account.
         ${error}`);

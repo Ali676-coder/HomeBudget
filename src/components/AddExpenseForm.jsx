@@ -37,10 +37,8 @@ const AddExpenseForm = ({ budgets }) => {
   );
   const total = quantity * unitPrice;
 
-  // Get current budget
   const currentBudget = budgets.find((b) => b.id === selectedBudgetId);
 
-  // Get expenses for that budget
   const expenses = getAllMatchingItme({
     category: "expenses",
     key: "budgetId",
