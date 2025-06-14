@@ -1,2 +1,2 @@
-this link for app preview https://ali676-coder.github.io/HomeBudget/
+this link for app preview by vercel https://home-budget-flax.vercel.app/
 
