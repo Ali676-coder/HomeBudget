@@ -119,3 +119,26 @@ export const formatCurrency = (amt) => {
 // End format currency
 
 // End Formatting
+
+// Start group Expenses ByName
+
+export const groupExpensesByName = (expenses) => {
+  const grouped = {};
+
+  expenses.forEach((expense) => {
+    if (!grouped[expense.name]) {
+      grouped[expense.name] = {
+        name: expense.name,
+        quantity: 0,
+        unitPrice: expense.unitPrice,
+        amount: 0,
+      };
+    }
+    grouped[expense.name].quantity += expense.quantity;
+    grouped[expense.name].amount += expense.quantity * expense.unitPrice;
+  });
+
+  return Object.values(grouped);
+};
+
+// End group Expenses ByName

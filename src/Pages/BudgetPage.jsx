@@ -7,6 +7,8 @@ import {
   deleteItem,
   createExpense,
   getAllMatchingItme,
+  groupExpensesByName,
+  formatCurrency,
 } from "../helper";
 
 // Conponents Import
@@ -38,12 +40,44 @@ const BudgetPage = () => {
         <AddExpenseForm budgets={[budget]} />
       </div>
       {expenses && expenses.length > 0 && (
-        <div className="grid-md">
-          <h2>
-            <span className="accent">{budget.name}</span> Expenses
-          </h2>
-          <Table expenses={expenses} showBudget={false} />
-        </div>
+        <>
+          <div className="grid-md">
+            <h2>
+              <span className="accent">{budget.name}</span> Expenses
+            </h2>
+            <Table expenses={expenses} showBudget={false} />
+          </div>
+
+          <div className="grid-md">
+            <h2>
+              <span className="accent">Total</span>
+            </h2>
+            <div className="table">
+              <table>
+                <thead>
+                  <tr>
+                    <th>#</th>
+                    <th>Name</th>
+                    <th>Total Quantity</th>
+                    <th>Unit Price</th>
+                    <th>Total</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {groupExpensesByName(expenses).map((item, index) => (
+                    <tr key={item.name}>
+                      <td>{index + 1}</td>
+                      <td>{item.name}</td>
+                      <td>{item.quantity}</td>
+                      <td>{formatCurrency(item.unitPrice)}</td>
+                      <td>{formatCurrency(item.amount)}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </>
       )}
     </div>
   );
