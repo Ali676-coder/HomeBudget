@@ -35,7 +35,7 @@ export const getAllMatchingItme = ({ category, key, value }) => {
 
 export const createBudget = ({ name, amount }) => {
   const newItem = {
-    id: crypto.randomUUID(),
+    id: `${Date.now()}-${Math.floor(Math.random() * 100000)}`,
     name: name,
     createdAt: Date.now(),
     amount: +amount,
@@ -52,7 +52,7 @@ export const createBudget = ({ name, amount }) => {
 export const createExpense = ({ name, quantity, unitPrice, budgetId }) => {
   const amount = +quantity * +unitPrice;
   const newItem = {
-    id: crypto.randomUUID(),
+    id: `${Date.now()}-${Math.floor(Math.random() * 100000)}`,
     name: name,
     quantity: +quantity,
     unitPrice: +unitPrice,
