@@ -389,7 +389,7 @@ select {
 .dashboard {
   display: -ms-grid;
   display: grid;
-  gap: var(--space-lg);
+  gap: 15px;
   place-items: start;
   width: 100%;
 }
@@ -707,6 +707,8 @@ table a {
     Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   font-size: 14px;
   font-weight: 400;
+  margin-top: 10px;
+  opacity: 0.9;
 }
 
 .custom-toast-body {
@@ -715,11 +717,22 @@ table a {
   font-size: 14px;
   font-weight: 400;
 }
+.custom-toast .Toastify__progress-bar {
+  background: hsl(var(--accent));
+}
 @media (max-width: 600px) {
+  .Toastify__toast-container--top-right {
+    right: 1em !important;
+    left: auto !important;
+  }
   .custom-toast {
-    width: 90% !important;
-    margin-top: 20px;
-    opacity: 0.9;
+    width: 85% !important;
+    font-size: 13px;
+    padding: 0.75rem 1rem;
+  }
+
+  .custom-toast-body {
+    font-size: 13px;
   }
 }
 /* End toast */

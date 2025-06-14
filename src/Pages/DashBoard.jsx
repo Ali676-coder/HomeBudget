@@ -25,7 +25,7 @@ const DashBoard = () => {
       {userName ? (
         <div className="dashboard">
           <h1>
-            Welcome back, <span className="accent">{userName}</span>
+            Welcome, <span className="accent">{userName}</span>
           </h1>
           <div className="grid-sm">
             {budgets && budgets.length > 0 ? (
@@ -106,7 +106,7 @@ export const dashBoardAction = async ({ request }) => {
         name: values.newBudget,
         amount: values.newBudgetAmount,
       });
-      return toast.success("Budget Created");
+      return toast.success(`Budget ${values.newBudget} Created`);
     } catch (error) {
       throw new Error(`There was a problem creating your budget.
         ${error}`);

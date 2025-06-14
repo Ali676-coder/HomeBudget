@@ -12,7 +12,7 @@ import {
 // Start Library Import
 
 // Start React toastify
-import { ToastContainer, Flip } from "react-toastify";
+import { ToastContainer, Slide } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 // End React toastify
 
@@ -88,8 +88,8 @@ function App() {
     <div className="App">
       <RouterProvider router={router} />
       <ToastContainer
-        position="top-center"
-        autoClose={5000}
+        position="top-right"
+        autoClose={2500}
         hideProgressBar={false}
         newestOnTop={false}
         closeOnClick
@@ -97,8 +97,9 @@ function App() {
         pauseOnFocusLoss
         draggable
         pauseOnHover={false}
-        theme="dark"
-        transition={Flip}
+        theme="light"
+        transition={Slide}
+        limit={3}
         toastClassName="custom-toast"
         bodyClassName="custom-toast-body"
       />

@@ -40,10 +40,15 @@ const BudgetItem = ({ budget, showDelete = false }) => {
         </div>
 
         {showDelete ? (
-          <div className="flex-sm">
+          <div
+            className="flex-sm"
+            style={{
+              "--accent": color,
+            }}
+          >
             <button
               type="button"
-              className="btn btn--warning"
+              className="btn"
               onClick={() => setShowModal(true)}
             >
               <span>Delete Budget</span>
