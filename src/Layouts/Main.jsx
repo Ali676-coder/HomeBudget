@@ -5,7 +5,7 @@ import { fetchData } from "../helper";
 import { Outlet, useLoaderData } from "react-router-dom";
 
 // components Import
-import Nav from "../components/nav";
+import Nav from "../components/Nav";
 import Footer from "../components/Footer";
 
 const Main = () => {

@@ -68,7 +68,6 @@ const router = createBrowserRouter(
         action={budgetAction}
         errorElement={<Error />}
       >
-        {/* ✅ رجّعنا delete هون */}
         <Route path="delete" action={deleteBudget} />
       </Route>
 
