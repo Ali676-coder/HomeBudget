@@ -1,5 +1,5 @@
 // RRD Import
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, Link } from "react-router-dom";
 
 // helper function Import
 import {
@@ -32,6 +32,9 @@ const BudgetPage = () => {
       </h1>
       <div className="flex-lg">
         <BudgetItem budget={budget} showDelete={true} />
+        <Link to={`edit`} className="btn edit">
+          Edit Budget
+        </Link>
         <AddExpenseForm budgets={[budget]} />
       </div>
       {expenses && expenses.length > 0 && (

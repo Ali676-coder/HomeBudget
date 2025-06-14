@@ -27,6 +27,7 @@ import DashBoard from "./Pages/DashBoard";
 import Error from "./Pages/Error";
 import ExpensesPage from "./Pages/ExpensesPage";
 import BudgetPage from "./Pages/BudgetPage";
+import EditBudget from "./Pages/EditBudget";
 // End Pages Import
 
 // Start Loader Import
@@ -34,6 +35,7 @@ import { dashBoardLoader } from "./Pages/DashBoard";
 import { mainLoader } from "./Layouts/Main";
 import { expensesLoader } from "./Pages/ExpensesPage";
 import { budgetLoader } from "./Pages/BudgetPage";
+import { editBudgetLoader } from "./Pages/EditBudget";
 // End Loader Import
 
 // Start Actions Import
@@ -66,8 +68,17 @@ const router = createBrowserRouter(
         action={budgetAction}
         errorElement={<Error />}
       >
+        {/* ✅ رجّعنا delete هون */}
         <Route path="delete" action={deleteBudget} />
       </Route>
+
+      <Route
+        path="budget/:id/edit"
+        element={<EditBudget />}
+        loader={editBudgetLoader}
+        errorElement={<Error />}
+      />
+
       <Route
         path="expenses"
         element={<ExpensesPage />}
