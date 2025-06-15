@@ -545,6 +545,7 @@ progress[value]::-webkit-progress-value {
   gap: var(--space-lg);
   padding-block: var(--space-lg);
   text-align: center;
+  background-color: #1c1d21;
 }
 
 /* chart component */
