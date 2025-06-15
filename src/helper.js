@@ -142,3 +142,38 @@ export const groupExpensesByName = (expenses) => {
 };
 
 // End group Expenses ByName
+
+// Start filter by month
+
+export const groupExpensesByMonth = (expenses) => {
+  const grouped = {};
+
+  expenses.forEach((expense) => {
+    const date = new Date(expense.createdAt);
+    const month = date.toLocaleString("default", {
+      month: "long",
+      year: "numeric",
+    });
+
+    if (!grouped[month]) {
+      grouped[month] = {
+        name: month,
+        quantity: 0,
+        amount: 0,
+        unitPrice: 0,
+      };
+    }
+
+    const quantity = Number(expense.quantity);
+    const unitPrice = Number(expense.unitPrice);
+    const total = quantity * unitPrice;
+
+    grouped[month].quantity += quantity;
+    grouped[month].amount += total;
+    grouped[month].unitPrice = unitPrice;
+  });
+
+  return Object.values(grouped);
+};
+
+// Start filter by month
