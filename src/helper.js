@@ -2,15 +2,15 @@
 export const waait = () =>
   new Promise((res) => setTimeout(res, Math.random() * 1000));
 
-// Random Colors
+// Random Vibrant Colors
 export const generateRandomColors = () => {
   const baseColors = [
-    "0 85% 55%", // أحمر دافئ
-    "25 80% 55%", // برتقالي غني
-    "257.54 100% 50%", // ذهبي أصفر
-    "135 60% 50%", // أخضر معتدل
-    "245 65% 60%", // أزرق بنفسجي
-    "290 60% 60%", // بنفسجي وردي جذاب
+    "0 100% 50%", // أحمر قوي
+    "25 100% 50%", // برتقالي غني وواضح
+    "50 100% 50%", // أصفر ذهبي لامع
+    "135 100% 40%", // أخضر زاهي وقوي
+    "245 100% 60%", // أزرق بنفسجي مشرق
+    "290 100% 65%", // بنفسجي وردي واضح
   ];
 
   const existingBudgetsLength = fetchData("budgets")?.length ?? 0;

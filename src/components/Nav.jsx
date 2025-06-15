@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { NavLink, useSubmit } from "react-router-dom";
 import { FaTrash } from "react-icons/fa";
-import logomark from "../assets/logomark_corrected.svg";
+import logomark from "../assets/logomark_updated.svg";
 
 const Nav = ({ userName }) => {
   const [showModal, setShowModal] = useState(false);
