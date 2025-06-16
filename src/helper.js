@@ -5,12 +5,12 @@ export const waait = () =>
 // Random Vibrant Colors
 export const generateRandomColors = () => {
   const baseColors = [
-    "0 100% 50%", // أحمر قوي
-    "25 100% 50%", // برتقالي غني وواضح
-    "50 100% 50%", // أصفر ذهبي لامع
-    "135 100% 40%", // أخضر زاهي وقوي
-    "245 100% 60%", // أزرق بنفسجي مشرق
-    "290 100% 65%", // بنفسجي وردي واضح
+    "0 100% 50%",
+    "25 100% 50%",
+    "50 100% 50%",
+    "135 100% 40%",
+    "245 100% 60%",
+    "290 100% 65%",
   ];
 
   const existingBudgetsLength = fetchData("budgets")?.length ?? 0;
@@ -21,7 +21,13 @@ export const generateRandomColors = () => {
 
 // get Item
 export const fetchData = (key) => {
-  return JSON.parse(localStorage.getItem(key));
+  try {
+    const value = localStorage.getItem(key);
+    return JSON.parse(value);
+  } catch (error) {
+    console.error(`خطأ في قراءة ${key} من localStorage:`, error);
+    return null;
+  }
 };
 
 // Start Get all items from local storage
