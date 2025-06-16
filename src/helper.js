@@ -23,6 +23,9 @@ export const generateRandomColors = () => {
 export const fetchData = (key) => {
   try {
     const value = localStorage.getItem(key);
+
+    if (!value || value === "undefined") return null;
+
     return JSON.parse(value);
   } catch (error) {
     console.error(`خطأ في قراءة ${key} من localStorage:`, error);
